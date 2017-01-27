@@ -1,0 +1,59 @@
+Introduction
+I have never been into computer games, even as a teenager in the Eighties. I was exposed to some, mainly through my 
+brother’s Atari. I tried Pong, Centipede, Frogger, Space Invaders and Pacman. To be honest, if I’d have known ahead 
+of time that so much of the class grade would be based on video games I wouldn’t have taken the class. So here is an 
+older person’s take on the coding behind video games from the early era.
+
+Game Play and Rules
+The player controls the movement (up, down, right, left) of Pacman through a maze of small and large dots. The goal 
+is for Pacman to eat all the dots in the maze without getting killed by the ghosts. By doing so the player/Pacman 
+advances to a new screen where the rules stay the same, but the speed of Pacman, the ghosts and the bonus fruit increases.  
+The aggressiveness of the ghosts also increases at each level/screen.
+When a game begins Pacman starts off with three lives. He loses a life when one or more ghosts touch him in normal play mode. 
+There are four that, during regular play, chase Pacman and can kill him by touching him. However, after Pacman eats a larger...
+
+
+How points are gained: 
+1.	The small dots (244 total) are worth 10 points each. 
+2.	The 4 large “energizer” dots are worth 50 points each. 
+3.	The first blue ghost eaten is worth 200 point. The points for eating each successive ghost doubles with each ghost eaten.
+4.	When Pacman has eaten 70 dots, 170 dots, …  bonus fruit (cherries, strawberry, banana, etc..) appear briefly on the screen. If Pacman eats one its value is based on the type of fruit it is and what level/screen the player is on. After Pacman eats fruit the fruit eaten shows up on screen, but out of play. According to http://pacmanmuseum.com/history/pacman-scoring.php “The exact duration (i.e., 9.3333 seconds, 10.0 seconds, 9.75 seconds, etc.)” (the fruit is on screen) ”is variable and does not become predictable with the use of patterns.”
+
+Screen appearance:
+1.	Number of lives remaining is indicated by number of Pacman figures on the lower left side of the game screen.
+2.	Player points are shown on the top left of the screen.
+3.	Any bonus items eaten will be shown in the bottom right side of the screen.
+
+More about modes of play:
+When Pacman eats a large “energizer” dot the behavior of the ghosts changes for a certain amount of time. During this time:
+1.	Sound changes
+2.	The color of ghosts changes to dark blue for a certain number of seconds (time decreases with increasing levels). Just before changing back to normal mode of play the ghosts flash between dark blue and white.
+3.	Pacman gains points by eating ghosts. On each level Pacman gains 200 points for eating the first ghost, 400 for the second, 800 for the third and 1600 for the fourth. 
+4.	By level 19, the ghosts stop turning blue altogether and can no longer be eaten for additional points.
+
+More about number of lives:
+1.	When game starts Pacman has 3 lives. while (lives = 3; lives > 0; lives--)
+2.	When  Pacman is eaten by a ghost he loses a life.
+3.	If player reaches 10,000 points s/he gets an extra life. No more extra lives are awarded after that.
+
+Sounds:
+1.	Pre-start music
+2.	Pacman eating dots sound
+3.	Pacman eating ghosts or bonus fruit sound
+4.	Ghosts in scared mode sound
+
+Ghosts (Blinky (red), Pinky (pink), Inky (light blue), Clyde(yellow):
+1.	All four ghosts start off in their cage in the center of the game.
+2.	They leave the cage one at a time, with the speed of release dependent on the level the player is on in the game. At level 1/screen 1 ghosts are at their slowest speed; level 2 = screen 2 <- slightly faster, etc..
+3.	I will use the word directionality to indicate how strongly ghosts are attracted to Pacman. While time increases, ghost directionality toward Pacman increases.
+4.	The ghosts’ behavior varies by their color. The red ghost, “Blinky” is the most aggressive. The aggressiveness of the other ghosts varies throughout the game.
+
+Fruit and other bonus items Pacman gets points for eating:
+1.	fruit – These are the only ones a beginning level player like me will see.
+2.	a spaceship
+3.	a bell
+4.	a key
+
+Pacman’s speed:
+1.	Pacman is fastest when he is not eating dots.
+2.	When eating Pacman’s speed decreases.
