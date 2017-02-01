@@ -1,0 +1,79 @@
+/*
+ * Created on January 31, 2017, 7:17 PM
+ */
+
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+//fxn prototypes
+void inpatient(int, float, float);
+void outpatient(float, float);
+
+int main() 
+{
+    int type;
+    
+    cout << "Was the patient admitted as an inpatient or an outpatient?\n";
+    cout << "Type 1 for inpatient. Type 2 for outpatient.\n";
+    cin >> type;
+    
+    if (type == 1)
+        inpatient();//(int, float, float);
+    else if (type == 2)
+        outpatient();
+    else
+        cout << "You are in else of the if statement.\n";
+    
+    cout << "Have a nice day.\n";
+    
+    return 0;
+}
+
+
+void inpatient(int days, float meds, float serv)
+{
+    float total;
+     
+    cout << "Enter the number of days spent in the hospital.\n"; 
+    cin >> days;
+    
+    cout << "Enter the medication charges.\n";
+    cin >> meds;
+    
+    cout << "Enter the charges for hospital services.\n";
+    cin >> serv;    
+    
+    total = (days * 400.0) + serv + meds;
+    
+    // set floats for $ values
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+    
+    cout << "The total is $" << total << endl;
+
+}
+
+
+void outpatient(float meds, float serv)
+{
+    float total;
+    
+    cout << "Enter the charges for hospital services.\n";
+    cin >> serv; 
+    
+    cout << "Enter the medication charges.\n";
+    cin >> meds;
+    
+    total = serv + meds;
+    
+    // set floats for $ values
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+    
+    cout << "The total is $" << total << endl;
+
+}
