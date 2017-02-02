@@ -1,15 +1,14 @@
 #include <iostream>
 #include <iomanip>
-
 using namespace std;
 
 int squareFootage();
 
 int main() 
 {
-    float price, numgal, costgal, labor, laborcost;
     int sqrft;
-    
+    float labor, numgal, price, costgal, laborcost;
+
     cout << "Enter the price of a gallon of paint.\n";
     cin >> price;
     while (price < 10.00)
@@ -21,13 +20,14 @@ int main()
     sqrft = squareFootage();
     
     // paint cost
-    numgal = (sqrft/110.0);
-    costgal = (numgal * price);    
+    numgal = sqrft/110.0;
+    costgal = numgal * price;
+
     
     // labor cost
-    labor = (sqrft/110) * 8;
+    labor = (sqrft/110.0) * 8;
     laborcost = labor * 25;
-    
+
     cout << fixed << showpoint << setprecision(2);    
     
     cout << "Gallons of paint required: " << numgal << endl;
@@ -41,8 +41,8 @@ int main()
 
 int squareFootage()
 {
-    int j, num, sum, footage;
-
+    int j, num, footage;
+    int sum = 0;
 
     cout << "Enter the number of rooms you would like painted.\n";
     cin >> num;
@@ -54,6 +54,6 @@ int squareFootage()
         cin >> footage;
         sum += footage;
     }    
-    
+
     return sum;
 }
