@@ -1,0 +1,41 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+bool isPrime(int);
+
+int main() 
+{
+    int num; 
+    
+    //get number
+    cout << "Enter a number and I will tell you if it is a prime number.\n";
+    cin >> num;    
+    
+    if (isPrime(num))
+        cout << "The number " << num << " is prime.\n";
+    else
+        cout << "The number " << num << " is not prime.\n";
+    
+    return 0;
+}
+
+bool isPrime(int num)
+{
+    bool status;
+    
+    if ((num < 2) || (num % 2 == 0))
+        status = false;
+    if (num == 2) 
+        status = true;
+    for(int i = 3; (i*i) <= num; i += 2)
+    {    
+        if (num % i == 0)
+            status = false;  
+        else
+            status = true;
+    }
+    return status;
+
+}
