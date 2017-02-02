@@ -31,7 +31,7 @@ int numEmployees()
 {
     int num;
     
-    cout << "How many employees are in the company?/n";
+    cout << "How many employees are in the company?\n";
     cin >> num;
     
     return num;
