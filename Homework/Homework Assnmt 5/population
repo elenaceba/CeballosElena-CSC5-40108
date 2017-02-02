@@ -1,0 +1,52 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+int main() 
+{
+    int start, years;
+    float birth, death, newpop;
+    
+    cout << "What is the starting size of the population?\n";
+    cin >> start;
+    
+    while (start < 2)
+    {    
+        cout << "Please choose a starting size greater than 1.\n";
+        cin >> start;
+    }
+    
+    cout << "What is the annual birth rate?\n";
+    cin >> birth;
+    
+    while (birth < 0)
+    {
+        cout << "Please enter a positive birth rate.\n";
+        cin >> birth;
+    }
+    
+    cout << "What is the annual death rate?\n";
+    cin >> death;
+    
+    while (death < 0)
+    {
+        cout << "Please enter a positive death rate.\n";
+        cin >> death;
+    }
+    
+    cout << "How many years would you like displayed?\n";
+    cin >> years;
+    
+    while (years < 0)
+    {
+        cout << "Please enter at minimum one year.\n";
+        cin >> years;
+    }
+    
+    newpop = start + birth - death;
+    cout << fixed << showpoint << setprecision(1);
+    cout << "The new population size is " << newpop << ".\n";
+    
+    return 0;
+}
