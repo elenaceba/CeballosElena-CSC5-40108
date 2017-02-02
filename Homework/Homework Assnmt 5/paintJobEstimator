@@ -1,0 +1,59 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int squareFootage();
+
+int main() 
+{
+    float price, numgal, costgal, labor, laborcost;
+    int sqrft;
+    
+    cout << "Enter the price of a gallon of paint.\n";
+    cin >> price;
+    while (price < 10.00)
+    {    
+        cout << "Please enter a cost for paint that is at minimum $10.00.\n";
+        cin >> price;
+    }
+    
+    sqrft = squareFootage();
+    
+    // paint cost
+    numgal = (sqrft/110.0);
+    costgal = (numgal * price);    
+    
+    // labor cost
+    labor = (sqrft/110) * 8;
+    laborcost = labor * 25;
+    
+    cout << fixed << showpoint << setprecision(2);    
+    
+    cout << "Gallons of paint required: " << numgal << endl;
+    cout << "Hours of labor required: " << labor << endl;
+    cout << "The cost for paint is: $" << costgal << endl;
+    cout << "Labor charges: $" << laborcost << endl;
+    cout << "Total cost: $" << (costgal + laborcost) << endl;
+    
+    return 0;
+}
+
+int squareFootage()
+{
+    int j, num, sum, footage;
+
+
+    cout << "Enter the number of rooms you would like painted.\n";
+    cin >> num;
+    
+    cout << "Enter the square footage of each room you would like painted.\n";
+    
+    for(j = 1; j <= num; j++)
+    {
+        cin >> footage;
+        sum += footage;
+    }    
+    
+    return sum;
+}
